@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FD Construtora | Construindo Espaços, Realizando Projetos</title>
+  <meta name="description" content="FD Construtora - Especializada em obras corporativas e residenciais, arquitetura e gerenciamento de projetos com alta sofisticação, precisão e transparência." />
+  <meta name="keywords" content="FD Construtora, obras corporativas, construções residenciais, arquitetura, projetos de construção, reforma corporativa, engenharia civil" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Fonts: Playfair Display (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            wine: {
+              950: '#2C060B',
+              900: '#3D0A11',
+              800: '#4A0E17',
+              700: '#60121E',
+              600: '#7B1B29',
+              500: '#942233',
+            },
+            gold: {
+              300: '#F3E5AB',
+              400: '#E6CA65',
+              500: '#D4AF37',
+              600: '#C5A059',
+              700: '#A37F31',
+            },
+            sand: {
+              50: '#FAFAFA',
+              100: '#F5F3F4',
+              200: '#EAE6E8',
+            },
+            charcoal: {
+              800: '#2B2B2B',
+              900: '#1E1E1E',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.25)',
+            'wine-glow': '0 10px 30px -10px rgba(74, 14, 23, 0.35)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAFAFA;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7B1B29;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #4A0E17;
+    }
+
+    /* Shimmer Effect for Gold Details */
+    .gold-shimmer {
+      background: linear-gradient(110deg, #D4AF37 0%, #FFF3B0 25%, #C5A059 50%, #FFF3B0 75%, #D4AF37 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 6s linear infinite;
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+    /* Glassmorphism Classes */
+    .glass-header {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .glass-dark {
+      background: rgba(44, 6, 11, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+  </style>
+</head>
+
+<body class="font-sans text-charcoal-800 bg-sand-50 antialiased selection:bg-wine-800 selection:text-gold-300">
+
+  <!-- TOP SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-wine-800 via-gold-500 to-wine-600 z-50 transition-all duration-150" style="width: 0%;"></div>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 glass-header shadow-sm" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- LOGO -->
+        <a href="#inicio" class="flex items-center gap-3 group focus:outline-none">
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-wine-900 via-wine-800 to-wine-950 flex items-center justify-center border border-gold-500/40 shadow-md transition-transform duration-300 group-hover:scale-105">
+            <span class="font-serif font-bold text-2xl text-gold-500 tracking-tighter">FD</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif font-bold text-xl tracking-wider text-wine-950 leading-tight">FD CONSTRUTORA</span>
+            <span class="text-[10px] tracking-[0.25em] text-gold-600 font-semibold uppercase">Engenharia & Arquitetura</span>
+          </div>
+        </a>
+
+        <!-- DESKTOP NAVIGATION -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#inicio" class="text-sm font-medium text-charcoal-800 hover:text-wine-800 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Início</a>
+          <a href="#sobre" class="text-sm font-medium text-charcoal-800 hover:text-wine-800 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Sobre Nós</a>
+          <a href="#servicos" class="text-sm font-medium text-charcoal-800 hover:text-wine-800 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Serviços</a>
+          <a href="#projetos" class="text-sm font-medium text-charcoal-800 hover:text-wine-800 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Projetos</a>
+          <a href="#diferenciais" class="text-sm font-medium text-charcoal-800 hover:text-wine-800 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Diferenciais</a>
+          <a href="#contato" class="text-sm font-medium text-charcoal-800 hover:text-wine-800 transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Contato</a>
+        </nav>
+
+        <!-- CTA HEADER BUTTON -->
+        <div class="hidden lg:flex items-center">
+          <button onclick="openBudgetModal()" class="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 bg-gradient-to-r from-wine-800 to-wine-700 rounded-lg shadow-wine-glow hover:from-wine-900 hover:to-wine-800 hover:shadow-gold-glow border border-gold-500/30 group overflow-hidden">
+            <span class="relative z-10 flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp text-gold-400 text-base"></i>
+              Solicitar Orçamento
+            </span>
+            <span class="absolute inset-0 bg-gradient-to-r from-gold-500/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
+        <div class="flex items-center md:hidden">
+          <button id="mobile-menu-btn" type="button" aria-label="Abrir Menu Nav" class="text-wine-900 hover:text-wine-700 focus:outline-none p-2 rounded-lg">
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobile-menu" class="hidden md:hidden bg-sand-50 border-b border-wine-800/10 px-4 pt-2 pb-6 space-y-3 transition-all duration-300">
+      <a href="#inicio" class="mobile-link block px-3 py-2 text-base font-medium text-charcoal-900 hover:bg-wine-800/10 rounded-md">Início</a>
+      <a href="#sobre" class="mobile-link block px-3 py-2 text-base font-medium text-charcoal-900 hover:bg-wine-800/10 rounded-md">Sobre Nós</a>
+      <a href="#servicos" class="mobile-link block px-3 py-2 text-base font-medium text-charcoal-900 hover:bg-wine-800/10 rounded-md">Serviços</a>
+      <a href="#projetos" class="mobile-link block px-3 py-2 text-base font-medium text-charcoal-900 hover:bg-wine-800/10 rounded-md">Projetos</a>
+      <a href="#diferenciais" class="mobile-link block px-3 py-2 text-base font-medium text-charcoal-900 hover:bg-wine-800/10 rounded-md">Diferenciais</a>
+      <a href="#contato" class="mobile-link block px-3 py-2 text-base font-medium text-charcoal-900 hover:bg-wine-800/10 rounded-md">Contato</a>
+      <div class="pt-2">
+        <button onclick="openBudgetModal()" class="w-full text-center px-5 py-3 text-sm font-semibold text-white bg-wine-800 rounded-lg shadow-md hover:bg-wine-900 transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-gold-400"></i>
+          Solicitar Orçamento
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION -->
+  <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-wine-950">
+    <!-- HERO BACKGROUND IMAGE WITH GRADIENT OVERLAY -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85" 
+           alt="Arquitetura Contemporânea FD Construtora" 
+           class="w-full h-full object-cover object-center transform scale-105 transition-transform duration-10000 hover:scale-100" />
+      <div class="absolute inset-0 bg-gradient-to-r from-wine-950 via-wine-950/85 to-wine-900/60"></div>
+      <div class="absolute inset-0 bg-black/30"></div>
+    </div>
+
+    <!-- ELEGANT GOLD ACCENT LINES -->
+    <div class="absolute top-1/4 right-10 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-8 space-y-8">
+          <!-- BADGE -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-wine-900/80 border border-gold-500/40 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+            <span class="text-xs uppercase tracking-widest text-gold-300 font-medium">Soluções Corporativas & Residenciais</span>
+          </div>
+
+          <!-- MAIN TITLE -->
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight">
+            Construindo espaços.<br />
+            <span class="gold-shimmer italic font-normal">Realizando projetos.</span>
+          </h1>
+
+          <!-- SUBTITLE -->
+          <p class="text-base sm:text-lg text-sand-100/90 font-light leading-relaxed max-w-2xl">
+            Da concepção arquitetônica ao acabamento final. Entregamos excelência em engenharia, rigor técnico no planejamento e total transparência para tirar seus maiores projetos do papel.
+          </p>
+
+          <!-- CTAS -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="#projetos" class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-wine-950 bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 rounded-lg shadow-gold-glow hover:brightness-110 transition-all duration-300 text-center font-sans tracking-wide">
+              <span>Conheça Nossos Projetos</span>
+              <i class="fa-solid fa-arrow-right-long ml-2 text-xs"></i>
+            </a>
+
+            <button onclick="openBudgetModal()" class="inline-flex items-center justify-center px-8 py-4 text-sm font-semibold text-white bg-wine-900/60 hover:bg-wine-900 border border-gold-500/40 rounded-lg backdrop-blur-md transition-all duration-300 text-center">
+              <i class="fa-brands fa-whatsapp text-gold-400 mr-2 text-base"></i>
+              Solicite um Orçamento
+            </button>
+          </div>
+
+          <!-- TRUST HIGHLIGHTS -->
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-gold-500/20 max-w-xl">
+            <div>
+              <p class="text-gold-400 font-serif font-bold text-lg sm:text-xl">Corporativo</p>
+              <p class="text-xs text-sand-200/70">Escritórios & Sedes</p>
+            </div>
+            <div class="border-l border-gold-500/20 pl-4">
+              <p class="text-gold-400 font-serif font-bold text-lg sm:text-xl">Residencial</p>
+              <p class="text-xs text-sand-200/70">Alto Padrão</p>
+            </div>
+            <div class="border-l border-gold-500/20 pl-4">
+              <p class="text-gold-400 font-serif font-bold text-lg sm:text-xl">Gestão E2E</p>
+              <p class="text-xs text-sand-200/70">Do Projeto à Chave</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO QUICK BUDGET CARD -->
+        <div class="lg:col-span-4 hidden lg:block">
+          <div class="glass-dark rounded-2xl p-6 shadow-2xl relative border border-gold-500/30">
+            <div class="flex items-center justify-between border-b border-gold-500/20 pb-4 mb-4">
+              <h3 class="font-serif text-lg font-bold text-white">Simule sua Obra</h3>
+              <span class="text-xs font-mono text-gold-400 px-2 py-0.5 rounded bg-gold-500/10">Estimador Rápido</span>
+            </div>
+
+            <form id="hero-quick-calc" onsubmit="handleHeroQuickCalc(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-medium text-sand-200 mb-1">Tipo de Projeto</label>
+                <select id="quick-type" class="w-full bg-wine-900/90 text-white text-xs rounded-lg border border-gold-500/30 p-2.5 focus:border-gold-400 focus:outline-none">
+                  <option value="Corporativo">Obra Corporativa / Comercial</option>
+                  <option value="Residencial">Construção Residencial</option>
+                  <option value="Reforma/Arquitetura">Projeto & Arquitetura</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-medium text-sand-200 mb-1">Área Aproximada (m²)</label>
+                <input type="number" id="quick-area" placeholder="Ex: 150" min="20" required class="w-full bg-wine-900/90 text-white text-xs rounded-lg border border-gold-500/30 p-2.5 focus:border-gold-400 focus:outline-none placeholder-sand-200/40" />
+              </div>
+
+              <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-wine-950 text-xs font-bold uppercase tracking-wider rounded-lg shadow-md transition duration-300">
+                Calcular no WhatsApp
+              </button>
+            </form>
+            <p class="text-[10px] text-center text-sand-200/50 mt-3">Orçamento preliminar sem compromisso.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT US SECTION (SOBRE NÓS) -->
+  <section id="sobre" class="py-20 lg:py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- IMAGE COMPOSITION -->
+        <div class="lg:col-span-6 relative">
+          <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-sand-100">
+            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Gestão técnica e execução FD Construtora" 
+                 class="w-full h-auto object-cover rounded-xl" />
+          </div>
+          
+          <!-- ACCENT FLOATING CARD -->
+          <div class="absolute -bottom-6 -right-4 sm:bottom-6 sm:-right-6 z-20 bg-wine-900 text-white p-6 rounded-xl shadow-2xl border border-gold-500/40 max-w-xs hidden sm:block">
+            <div class="flex items-center gap-3 mb-2">
+              <i class="fa-solid fa-compass-drafting text-gold-400 text-2xl"></i>
+              <span class="font-serif font-bold text-sand-50">Compromisso FD</span>
+            </div>
+            <p class="text-xs text-sand-200/80 leading-relaxed">
+              Planejamento minucioso e rigor técnico do projeto ao acabamento.
+            </p>
+          </div>
+
+          <!-- GOLD BACKGROUND DECORATION -->
+          <div class="absolute -top-6 -left-6 w-48 h-48 bg-gold-500/10 rounded-2xl -z-0"></div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-wine-800/10 border border-wine-800/20 text-wine-900 text-xs font-semibold tracking-wider uppercase">
+            Sobre A FD Construtora
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wine-950 leading-tight">
+            Engenharia de precisão, arquitetura refinada e gestão transparente.
+          </h2>
+
+          <p class="text-charcoal-800/80 text-sm sm:text-base leading-relaxed">
+            A <strong>FD Construtora</strong> atua de forma especializada no segmento de construções corporativas e residenciais de alto padrão, combinando soluções em arquitetura, engenharia e planejamento de obras.
+          </p>
+
+          <p class="text-charcoal-800/80 text-sm sm:text-base leading-relaxed">
+            Nossa atuação baseia-se em quatro pilares inegociáveis: <strong>qualidade nos materiais</strong>, <strong>rigor no cumprimento de prazos</strong>, <strong>segurança nas etapas construtivas</strong> e <strong>atenção meticulosa a cada detalhe</strong>. Entendemos que cada obra é a materialização de um investimento ou sonho único.
+          </p>
+
+          <!-- 4 PILLARS GRID -->
+          <div class="grid grid-cols-2 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-sand-100 border border-sand-200 hover:border-gold-500/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-wine-800/10 flex items-center justify-center text-wine-800 mb-2">
+                <i class="fa-solid fa-square-check text-sm"></i>
+              </div>
+              <h4 class="font-serif font-bold text-wine-950 text-sm mb-1">Qualidade Superior</h4>
+              <p class="text-xs text-charcoal-800/70">Seleção rigorosa de insumos e processos certificados.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-sand-100 border border-sand-200 hover:border-gold-500/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-wine-800/10 flex items-center justify-center text-wine-800 mb-2">
+                <i class="fa-solid fa-calendar-check text-sm"></i>
+              </div>
+              <h4 class="font-serif font-bold text-wine-950 text-sm mb-1">Planejamento</h4>
+              <p class="text-xs text-charcoal-800/70">Cronograma detalhado e gestão contínua de prazos.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-sand-100 border border-sand-200 hover:border-gold-500/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-wine-800/10 flex items-center justify-center text-wine-800 mb-2">
+                <i class="fa-solid fa-shield-halved text-sm"></i>
+              </div>
+              <h4 class="font-serif font-bold text-wine-950 text-sm mb-1">Segurança Total</h4>
+              <p class="text-xs text-charcoal-800/70">Conformidade estrita com normas NBR e NR regulamentares.</p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-sand-100 border border-sand-200 hover:border-gold-500/40 transition-colors">
+              <div class="w-8 h-8 rounded-lg bg-wine-800/10 flex items-center justify-center text-wine-800 mb-2">
+                <i class="fa-solid fa-gem text-sm"></i>
+              </div>
+              <h4 class="font-serif font-bold text-wine-950 text-sm mb-1">Detalhamento</h4>
+              <p class="text-xs text-charcoal-800/70">Excelência na execução dos acabamentos e marcenaria.</p>
+            </div>
+          </div>
+
+          <div class="pt-2 text-xs text-charcoal-800/50 italic">
+            * Informações institucionais sujeitas a atualização conforme o acervo oficial da FD Construtora.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SERVICES SECTION (SERVIÇOS) -->
+  <section id="servicos" class="py-20 lg:py-28 bg-sand-100 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- SECTION HEADER -->
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="inline-block px-3 py-1 rounded-full bg-wine-800/10 border border-wine-800/20 text-wine-900 text-xs font-semibold tracking-wider uppercase">
+          Especialidades FD
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wine-950">
+          Soluções Completas de Construção & Arquitetura
+        </h2>
+        <p class="text-charcoal-800/70 text-sm sm:text-base">
+          Do escopo inicial ao handover da chave. Oferecemos gestão integrada para empreendimentos corporativos e residenciais.
+        </p>
+      </div>
+
+      <!-- SERVICES CARDS GRID -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- CARD 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-wine-glow transition-all duration-300 border border-gold-500/20 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-wine-900 to-wine-800 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <i class="fa-solid fa-building"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-wine-950 mb-3">Obras Corporativas</h3>
+            <p class="text-xs text-charcoal-800/70 leading-relaxed mb-4">
+              Construção e adequação de escritórios, sedes administrativas, lojas e espaços comerciais com foco em eficiência, prazos e identidade de marca.
+            </p>
+            <ul class="text-xs text-charcoal-800/80 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Turnkey e Fit-out</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Instalações Especiais</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Gestão de Interferências</li>
+            </ul>
+          </div>
+          <button onclick="openServiceDetail('corporativas')" class="w-full py-2.5 px-4 rounded-lg bg-sand-100 hover:bg-wine-800 hover:text-white text-wine-900 font-semibold text-xs transition duration-300 border border-wine-800/20 flex items-center justify-center gap-2">
+            Saiba Mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-wine-glow transition-all duration-300 border border-gold-500/20 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-wine-900 to-wine-800 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-wine-950 mb-3">Construções Residenciais</h3>
+            <p class="text-xs text-charcoal-800/70 leading-relaxed mb-4">
+              Execução de residências de médio e alto padrão, priorizando conforto térmico e acústico, sofisticação estética e acabamentos nobres.
+            </p>
+            <ul class="text-xs text-charcoal-800/80 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Casperia e Edificações</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Reformas Estruturais</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Acabamentos Finos</li>
+            </ul>
+          </div>
+          <button onclick="openServiceDetail('residenciais')" class="w-full py-2.5 px-4 rounded-lg bg-sand-100 hover:bg-wine-800 hover:text-white text-wine-900 font-semibold text-xs transition duration-300 border border-wine-800/20 flex items-center justify-center gap-2">
+            Saiba Mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-wine-glow transition-all duration-300 border border-gold-500/20 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-wine-900 to-wine-800 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <i class="fa-solid fa-pen-ruler"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-wine-950 mb-3">Arquitetura & Projetos</h3>
+            <p class="text-xs text-charcoal-800/70 leading-relaxed mb-4">
+              Desenvolvimento de projetos arquitetônicos, executivos e complementares integrados, unindo funcionalidade e elegância contemporânea.
+            </p>
+            <ul class="text-xs text-charcoal-800/80 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Anteprojeto e Estudo</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Projetos Executivos</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Detalhamento de Interiores</li>
+            </ul>
+          </div>
+          <button onclick="openServiceDetail('arquitetura')" class="w-full py-2.5 px-4 rounded-lg bg-sand-100 hover:bg-wine-800 hover:text-white text-wine-900 font-semibold text-xs transition duration-300 border border-wine-800/20 flex items-center justify-center gap-2">
+            Saiba Mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-wine-glow transition-all duration-300 border border-gold-500/20 flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-wine-900 to-wine-800 flex items-center justify-center text-gold-400 text-2xl mb-6 group-hover:scale-110 transition-transform shadow-md">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <h3 class="font-serif font-bold text-xl text-wine-950 mb-3">Planejamento & Gestão</h3>
+            <p class="text-xs text-charcoal-800/70 leading-relaxed mb-4">
+              Controle físico-financeiro rigoroso, gestão de suprimentos e supervisão total de equipe para garantir a execução fiel do projeto.
+            </p>
+            <ul class="text-xs text-charcoal-800/80 space-y-2 mb-6">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Cronograma Físico-Financeiro</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Gestão de Insumos</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> Relatórios Periódicos</li>
+            </ul>
+          </div>
+          <button onclick="openServiceDetail('planejamento')" class="w-full py-2.5 px-4 rounded-lg bg-sand-100 hover:bg-wine-800 hover:text-white text-wine-900 font-semibold text-xs transition duration-300 border border-wine-800/20 flex items-center justify-center gap-2">
+            Saiba Mais <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-xs text-charcoal-800/60 italic">
+          * A prestação e contratação de cada serviço estão sujeitas à confirmação prévia de escopo e análise técnica do local.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. PROJECTS GALLERY (PORTFÓLIO) -->
+  <section id="projetos" class="py-20 lg:py-28 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- SECTION HEADER -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div class="space-y-3">
+          <span class="inline-block px-3 py-1 rounded-full bg-wine-800/10 border border-wine-800/20 text-wine-900 text-xs font-semibold tracking-wider uppercase">
+            Acervo Visual
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wine-950">
+            Galeria de Inspiracional & Projetos
+          </h2>
+          <p class="text-charcoal-800/70 text-sm max-w-xl">
+            Explore conceitos e referências de arquitetura e soluções construtivas.
+          </p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="flex flex-wrap gap-2" id="gallery-filters">
+          <button onclick="filterGallery('todos')" class="filter-btn active-filter px-4 py-2 text-xs font-semibold rounded-lg border transition duration-300 bg-wine-800 text-white border-wine-800">Todos</button>
+          <button onclick="filterGallery('corporativo')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-lg border transition duration-300 bg-sand-100 text-charcoal-800 border-sand-200 hover:border-gold-500">Corporativo</button>
+          <button onclick="filterGallery('residencial')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-lg border transition duration-300 bg-sand-100 text-charcoal-800 border-sand-200 hover:border-gold-500">Residencial</button>
+          <button onclick="filterGallery('arquitetura')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-lg border transition duration-300 bg-sand-100 text-charcoal-800 border-sand-200 hover:border-gold-500">Arquitetura</button>
+        </div>
+      </div>
+
+      <!-- GALLERY GRID -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+        
+        <!-- PROJECT ITEM 1: CORPORATIVO -->
+        <div class="gallery-item corporativo group relative rounded-2xl overflow-hidden shadow-lg border border-sand-200 bg-wine-950 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=85', 'Complexo Corporativo Moderno', 'Corporativo - Conceito de Escritório Open Space')">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Complexo Corporativo" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-gold-400">Corporativo</span>
+            <h3 class="font-serif font-bold text-lg text-white">Sede Administrativa Integrada</h3>
+            <p class="text-xs text-sand-200/80 mt-1 line-clamp-1">Projeto focado em produtividade e iluminação natural.</p>
+          </div>
+          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-wine-900/80 backdrop-blur-md flex items-center justify-center text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-expand text-sm"></i>
+          </div>
+        </div>
+
+        <!-- PROJECT ITEM 2: RESIDENCIAL -->
+        <div class="gallery-item residencial group relative rounded-2xl overflow-hidden shadow-lg border border-sand-200 bg-wine-950 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=85', 'Residência Contemporânea', 'Residencial - Casa de Alto Padrão com Estrutura Aberta')">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Residência de Alto Padrão" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-gold-400">Residencial</span>
+            <h3 class="font-serif font-bold text-lg text-white">Residência Horizon</h3>
+            <p class="text-xs text-sand-200/80 mt-1 line-clamp-1">Integração de áreas sociais e acabamentos em concreto e madeira.</p>
+          </div>
+          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-wine-900/80 backdrop-blur-md flex items-center justify-center text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-expand text-sm"></i>
+          </div>
+        </div>
+
+        <!-- PROJECT ITEM 3: ARQUITETURA -->
+        <div class="gallery-item arquitetura group relative rounded-2xl overflow-hidden shadow-lg border border-sand-200 bg-wine-950 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85', 'Detalhamento Arquitetônico', 'Arquitetura - Estudo de Fachada Minimalista')">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Detalhamento Arquitetônico" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-gold-400">Arquitetura</span>
+            <h3 class="font-serif font-bold text-lg text-white">Fachada Minimalista</h3>
+            <p class="text-xs text-sand-200/80 mt-1 line-clamp-1">Design de linhas retas, iluminação cênica e revestimentos nobres.</p>
+          </div>
+          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-wine-900/80 backdrop-blur-md flex items-center justify-center text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-expand text-sm"></i>
+          </div>
+        </div>
+
+        <!-- PROJECT ITEM 4: CORPORATIVO -->
+        <div class="gallery-item corporativo group relative rounded-2xl overflow-hidden shadow-lg border border-sand-200 bg-wine-950 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=85', 'Espaço de Reuniões Executivo', 'Corporativo - Auditório e Sala de Reunião Premium')">
+          <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80" alt="Espaço Corporativo Executivo" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-gold-400">Corporativo</span>
+            <h3 class="font-serif font-bold text-lg text-white">Ambiente Executivo</h3>
+            <p class="text-xs text-sand-200/80 mt-1 line-clamp-1">Soluções acústicas e marcenaria corporativa personalizada.</p>
+          </div>
+          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-wine-900/80 backdrop-blur-md flex items-center justify-center text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-expand text-sm"></i>
+          </div>
+        </div>
+
+        <!-- PROJECT ITEM 5: RESIDENCIAL -->
+        <div class="gallery-item residencial group relative rounded-2xl overflow-hidden shadow-lg border border-sand-200 bg-wine-950 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=85', 'Villa Contemporânea', 'Residencial - Área de Lazer e Integração com Piscina')">
+          <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80" alt="Villa Residencial" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-gold-400">Residencial</span>
+            <h3 class="font-serif font-bold text-lg text-white">Espaço Gourmet & Lazer</h3>
+            <p class="text-xs text-sand-200/80 mt-1 line-clamp-1">Área externa com revestimentos em granito e paisagismo integrado.</p>
+          </div>
+          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-wine-900/80 backdrop-blur-md flex items-center justify-center text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-expand text-sm"></i>
+          </div>
+        </div>
+
+        <!-- PROJECT ITEM 6: ARQUITETURA -->
+        <div class="gallery-item arquitetura group relative rounded-2xl overflow-hidden shadow-lg border border-sand-200 bg-wine-950 cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=85', 'Design de Interiores & Conceito', 'Arquitetura - Iluminação e Ambientes Integrados')">
+          <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80" alt="Interiores e Arquitetura" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100" />
+          <div class="absolute inset-0 bg-gradient-to-t from-wine-950 via-wine-950/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <span class="text-[10px] font-mono uppercase tracking-widest text-gold-400">Arquitetura</span>
+            <h3 class="font-serif font-bold text-lg text-white">Projeto de Interiores</h3>
+            <p class="text-xs text-sand-200/80 mt-1 line-clamp-1">Uso sofisticado de iluminação indireta e paleta sóbria.</p>
+          </div>
+          <div class="absolute top-4 right-4 w-10 h-10 rounded-full bg-wine-900/80 backdrop-blur-md flex items-center justify-center text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity">
+            <i class="fa-solid fa-expand text-sm"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DISCLAIMER BANNER REGARDING OFFICIAL PHOTOS -->
+      <div class="mt-12 p-4 rounded-xl bg-sand-100 border border-gold-500/30 flex items-center justify-between flex-wrap gap-4">
+        <div class="flex items-center gap-3">
+          <i class="fa-solid fa-circle-info text-wine-800 text-lg"></i>
+          <p class="text-xs text-charcoal-800/80">
+            <strong>Nota de Transparência:</strong> As imagens acima representam referências e conceitos de padrão arquitetônico. Projetos reais do acervo oficial da <strong>FD Construtora</strong> estão em fase de atualização técnica no catálogo digital.
+          </p>
+        </div>
+        <button onclick="openBudgetModal()" class="text-xs text-wine-800 font-bold hover:underline">
+          Consultar portfólio via WhatsApp &rarr;
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. DIFFERENTIALS SECTION (DIFERENCIAIS) -->
+  <section id="diferenciais" class="py-20 lg:py-28 bg-wine-950 text-white relative overflow-hidden">
+    <!-- DECORATIVE SHARDS -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-wine-900/40 to-transparent pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <span class="inline-block px-3 py-1 rounded-full bg-wine-900 border border-gold-500/30 text-gold-400 text-xs font-semibold tracking-wider uppercase">
+          Por que a FD Construtora?
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white">
+          Diferenciais que garantem a segurança do seu investimento
+        </h2>
+        <p class="text-sand-200/80 text-sm sm:text-base">
+          Trabalhamos com metodologias ágeis de gestão e compromisso ético do primeiro contato à entrega final.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- DIFFERENTIAL 1 -->
+        <div class="p-8 rounded-2xl bg-wine-900/60 border border-gold-500/20 backdrop-blur-md hover:border-gold-500/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-2">Garantia de Prazos</h3>
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Elaboramos cronogramas físicos detalhados com metas intermediárias claras, prevenindo atrasos no prazo final de entrega.
+          </p>
+        </div>
+
+        <!-- DIFFERENTIAL 2 -->
+        <div class="p-8 rounded-2xl bg-wine-900/60 border border-gold-500/20 backdrop-blur-md hover:border-gold-500/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-2">Transparência Orçamentária</h3>
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Planilhas orçamentárias abertas, sem surpresas nem custos ocultos. Cada insumo é especificado com clareza antes do início.
+          </p>
+        </div>
+
+        <!-- DIFFERENTIAL 3 -->
+        <div class="p-8 rounded-2xl bg-wine-900/60 border border-gold-500/20 backdrop-blur-md hover:border-gold-500/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-helmet-safety"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-2">Rigor Técnico & Segurança</h3>
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Supervisão contínua por profissionais habilitados no CREA/CAU, seguindo todas as normas técnicas de engenharia e NR de segurança.
+          </p>
+        </div>
+
+        <!-- DIFFERENTIAL 4 -->
+        <div class="p-8 rounded-2xl bg-wine-900/60 border border-gold-500/20 backdrop-blur-md hover:border-gold-500/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-2">Gestão End-to-End</h3>
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Cuidamos de todas as pontas: do licenciamento e projetos até a contratação de mão de obra e limpeza pós-obra.
+          </p>
+        </div>
+
+        <!-- DIFFERENTIAL 5 -->
+        <div class="p-8 rounded-2xl bg-wine-900/60 border border-gold-500/20 backdrop-blur-md hover:border-gold-500/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-2">Excelência em Acabamento</h3>
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Especialistas no assentamento de revestimentos nobres, marcenaria sofisticada, esquadrias sob medida e iluminação técnica.
+          </p>
+        </div>
+
+        <!-- DIFFERENTIAL 6 -->
+        <div class="p-8 rounded-2xl bg-wine-900/60 border border-gold-500/20 backdrop-blur-md hover:border-gold-500/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-white mb-2">Comunicação Direta</h3>
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Relatórios semanais com fotos, vídeos e status de avanço do cronograma para manter você sempre informado.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. CONTACT & BUDGET FORM SECTION (CONTATO E ORÇAMENTO) -->
+  <section id="contato" class="py-20 lg:py-28 bg-sand-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- LEFT COLUMN: CALL TO ACTION & INFO -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-4">
+            <span class="inline-block px-3 py-1 rounded-full bg-wine-800/10 border border-wine-800/20 text-wine-900 text-xs font-semibold tracking-wider uppercase">
+              Atendimento Especializado
+            </span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-wine-950">
+              Vamos tirar seu projeto do papel?
+            </h2>
+            <p class="text-charcoal-800/80 text-sm leading-relaxed">
+              Entre em contato conosco para agendar uma reunião técnica, solicitar uma análise orçamentária ou esclarecer dúvidas sobre os serviços da <strong>FD Construtora</strong>.
+            </p>
+          </div>
+
+          <!-- DIRECT CONTACT CHANNELS -->
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-white border border-sand-200 shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-green-500/10 text-green-600 flex items-center justify-center text-2xl">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <span class="text-xs text-charcoal-800/60 block font-medium">WhatsApp Direto</span>
+                <a id="contact-whatsapp-link" href="https://wa.me/5500000000000?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20FD%20Construtora." target="_blank" rel="noopener" class="font-bold text-wine-950 hover:text-wine-700 text-sm">
+                  Iniciar conversa no WhatsApp &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white border border-sand-200 shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-wine-800/10 text-wine-800 flex items-center justify-center text-xl">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <span class="text-xs text-charcoal-800/60 block font-medium">E-mail Oficial</span>
+                <span class="font-semibold text-wine-950 text-sm">contato@fdconstrutora.com.br</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-white border border-sand-200 shadow-sm flex items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-wine-800/10 text-wine-800 flex items-center justify-center text-xl">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div>
+                <span class="text-xs text-charcoal-800/60 block font-medium">Instagram</span>
+                <span class="font-semibold text-wine-950 text-sm">@fdconstrutora</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gold-500/10 border border-gold-500/30">
+            <p class="text-xs text-wine-950 font-medium">
+              <i class="fa-solid fa-clock text-gold-600 mr-1"></i>
+              <strong>Horário de Atendimento:</strong> Segunda a Sexta, das 08h às 18h.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: INTERACTIVE FORM WITH WHATSAPP GENERATOR -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-8 rounded-2xl shadow-xl border border-gold-500/20 space-y-6">
+            <div>
+              <h3 class="font-serif font-bold text-2xl text-wine-950">Solicitar Análise de Projeto</h3>
+              <p class="text-xs text-charcoal-800/60 mt-1">Preencha os dados abaixo para direcionamento direto ao especialista responsável.</p>
+            </div>
+
+            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+              
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="form-name" class="block text-xs font-semibold text-wine-950 mb-1">Seu Nome Completo *</label>
+                  <input type="text" id="form-name" required placeholder="Ex: Rodrigo Silva" class="w-full px-4 py-3 rounded-lg border border-sand-200 focus:border-gold-500 focus:outline-none text-xs bg-sand-50" />
+                </div>
+
+                <div>
+                  <label for="form-phone" class="block text-xs font-semibold text-wine-950 mb-1">Telefone / WhatsApp *</label>
+                  <input type="tel" id="form-phone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3 rounded-lg border border-sand-200 focus:border-gold-500 focus:outline-none text-xs bg-sand-50" />
+                </div>
+              </div>
+
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="form-service" class="block text-xs font-semibold text-wine-950 mb-1">Tipo de Serviço Pretendido *</label>
+                  <select id="form-service" required class="w-full px-4 py-3 rounded-lg border border-sand-200 focus:border-gold-500 focus:outline-none text-xs bg-sand-50 text-charcoal-800">
+                    <option value="Obra Corporativa">Obra Corporativa</option>
+                    <option value="Construção Residencial">Construção Residencial</option>
+                    <option value="Projeto de Arquitetura">Projeto de Arquitetura</option>
+                    <option value="Gerenciamento / Planejamento">Gerenciamento / Planejamento</option>
+                    <option value="Outros">Outro Tipo de Demanda</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="form-location" class="block text-xs font-semibold text-wine-950 mb-1">Cidade / Estado da Obra</label>
+                  <input type="text" id="form-location" placeholder="Ex: São Paulo / SP" class="w-full px-4 py-3 rounded-lg border border-sand-200 focus:border-gold-500 focus:outline-none text-xs bg-sand-50" />
+                </div>
+              </div>
+
+              <div>
+                <label for="form-message" class="block text-xs font-semibold text-wine-950 mb-1">Resumo do Projeto ou Detalhes</label>
+                <textarea id="form-message" rows="4" placeholder="Descreva brevemente o tamanho aproximado, prazo desejado ou particularidades do local..." class="w-full px-4 py-3 rounded-lg border border-sand-200 focus:border-gold-500 focus:outline-none text-xs bg-sand-50"></textarea>
+              </div>
+
+              <div class="flex items-center gap-2 pt-2">
+                <input type="checkbox" id="form-consent" required class="rounded text-wine-800 focus:ring-gold-500 h-4 w-4" />
+                <label for="form-consent" class="text-[11px] text-charcoal-800/70">
+                  Concordo em enviar estas informações para contato da equipe técnica da FD Construtora.
+                </label>
+              </div>
+
+              <button type="submit" class="w-full py-4 bg-gradient-to-r from-wine-800 via-wine-700 to-wine-900 hover:brightness-110 text-white font-semibold text-sm rounded-lg shadow-wine-glow transition duration-300 flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-gold-400 text-lg"></i>
+                Enviar Mensagem via WhatsApp
+              </button>
+
+              <p class="text-[10px] text-center text-charcoal-800/50">
+                Seus dados não serão repassados a terceiros. Solução otimizada para sites estáticos.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. FOOTER -->
+  <footer class="bg-wine-950 text-white border-t border-gold-500/20 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-wine-800/60">
+        
+        <!-- BRAND -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-wine-900 to-wine-800 flex items-center justify-center border border-gold-500/40">
+              <span class="font-serif font-bold text-xl text-gold-500">FD</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-serif font-bold text-lg tracking-wider text-white">FD CONSTRUTORA</span>
+              <span class="text-[9px] tracking-[0.2em] text-gold-400 uppercase">Engenharia & Arquitetura</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-sand-200/70 leading-relaxed">
+            Especialistas em obras corporativas, construções residenciais e projetos de alta precisão técnica.
+          </p>
+
+          <div class="flex items-center space-x-3 pt-2">
+            <a href="#" class="w-8 h-8 rounded-full bg-wine-900 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-wine-950 transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-wine-900 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-wine-950 transition"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+            <a href="#" class="w-8 h-8 rounded-full bg-wine-900 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-wine-950 transition"><i class="fa-brands fa-whatsapp text-xs"></i></a>
+          </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-gold-400 uppercase tracking-wider mb-4">Navegação</h4>
+          <ul class="space-y-2 text-xs text-sand-200/80">
+            <li><a href="#inicio" class="hover:text-gold-400 transition">Início</a></li>
+            <li><a href="#sobre" class="hover:text-gold-400 transition">Sobre Nós</a></li>
+            <li><a href="#servicos" class="hover:text-gold-400 transition">Serviços</a></li>
+            <li><a href="#projetos" class="hover:text-gold-400 transition">Projetos & Portfólio</a></li>
+            <li><a href="#diferenciais" class="hover:text-gold-400 transition">Diferenciais</a></li>
+            <li><a href="#contato" class="hover:text-gold-400 transition">Contato & Orçamentos</a></li>
+          </ul>
+        </div>
+
+        <!-- SERVICES LINK -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-gold-400 uppercase tracking-wider mb-4">Serviços</h4>
+          <ul class="space-y-2 text-xs text-sand-200/80">
+            <li>Obras Corporativas & Turnkey</li>
+            <li>Construções Residenciais de Alto Padrão</li>
+            <li>Arquitetura & Projetos Executivos</li>
+            <li>Planejamento e Gestão de Obras</li>
+            <li>Reformas e Adequações Estruturais</li>
+          </ul>
+        </div>
+
+        <!-- OFFICIAL INFO -->
+        <div>
+          <h4 class="font-serif font-bold text-sm text-gold-400 uppercase tracking-wider mb-4">Informações</h4>
+          <p class="text-xs text-sand-200/80 leading-relaxed mb-3">
+            Atendimento técnico presencial sob agendamento prévio.
+          </p>
+          <div class="text-xs text-sand-200/60 space-y-1 font-mono">
+            <p>CNPJ / Registro: Em atualização</p>
+            <p>Atuação: Projetos & Obras</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM BAR -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-sand-200/50 gap-4">
+        <p>© <span id="current-year"></span> FD Construtora. Todos os direitos reservados. Conteúdo oficial sujeito a validação final da empresa.</p>
+        <div class="flex items-center gap-4">
+          <a href="#inicio" class="hover:text-gold-400 transition flex items-center gap-1">
+            Voltar ao topo <i class="fa-solid fa-arrow-up text-[10px]"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL FOR GALLERY -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-gold-400 focus:outline-none">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="max-w-4xl w-full bg-wine-950 border border-gold-500/30 rounded-2xl overflow-hidden shadow-2xl">
+      <img id="lightbox-img" src="" alt="" class="w-full h-auto max-h-[70vh] object-contain bg-black" />
+      <div class="p-6 bg-wine-950 text-white space-y-2 border-t border-gold-500/20">
+        <h3 id="lightbox-title" class="font-serif font-bold text-xl text-gold-400"></h3>
+        <p id="lightbox-desc" class="text-xs text-sand-200/80"></p>
+        <p class="text-[10px] text-gold-500/60 italic pt-2">* Imagem demonstrativa de referência estética e arquitetônica.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUDGET MODAL -->
+  <div id="budget-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="max-w-lg w-full bg-white rounded-2xl p-6 sm:p-8 relative border border-gold-500/30 shadow-2xl space-y-6">
+      <button onclick="closeBudgetModal()" class="absolute top-4 right-4 text-charcoal-800/60 hover:text-wine-900 text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3 border-b border-sand-200 pb-4">
+        <div class="w-10 h-10 rounded-lg bg-wine-800 flex items-center justify-center text-gold-400 text-lg">
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+        <div>
+          <h3 class="font-serif font-bold text-xl text-wine-950">Solicitar Orçamento Rápido</h3>
+          <p class="text-xs text-charcoal-800/60">Atendimento direto com a equipe técnica da FD Construtora</p>
+        </div>
+      </div>
+
+      <form id="modal-budget-form" onsubmit="handleModalBudgetSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-wine-950 mb-1">Nome *</label>
+          <input type="text" id="modal-name" required placeholder="Seu nome completo" class="w-full p-2.5 rounded-lg border border-sand-200 text-xs bg-sand-50 focus:border-gold-500 focus:outline-none" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-wine-950 mb-1">Tipo de Obra *</label>
+          <select id="modal-type" required class="w-full p-2.5 rounded-lg border border-sand-200 text-xs bg-sand-50 focus:border-gold-500 focus:outline-none">
+            <option value="Corporativa">Obra Corporativa / Comercial</option>
+            <option value="Residencial">Construção Residencial de Alto Padrão</option>
+            <option value="Arquitetura">Projeto de Arquitetura & Interiores</option>
+            <option value="Reforma">Gerenciamento / Reforma</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-wine-950 mb-1">Mensagem ou Dúvida</label>
+          <textarea id="modal-msg" rows="3" placeholder="Conte-nos brevemente o que precisa..." class="w-full p-2.5 rounded-lg border border-sand-200 text-xs bg-sand-50 focus:border-gold-500 focus:outline-none"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 bg-wine-800 hover:bg-wine-900 text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-md transition flex items-center justify-center gap-2">
+          <i class="fa-brands fa-whatsapp text-gold-400 text-base"></i>
+          Iniciar Conversa no WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SERVICE DETAIL MODAL -->
+  <div id="service-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="max-w-xl w-full bg-white rounded-2xl p-6 sm:p-8 relative border border-gold-500/30 shadow-2xl space-y-4">
+      <button onclick="closeServiceModal()" class="absolute top-4 right-4 text-charcoal-800/60 hover:text-wine-900 text-xl">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="w-12 h-12 rounded-xl bg-wine-800 text-gold-400 flex items-center justify-center text-2xl" id="svc-modal-icon">
+        <i class="fa-solid fa-building"></i>
+      </div>
+
+      <h3 class="font-serif font-bold text-2xl text-wine-950" id="svc-modal-title">Título do Serviço</h3>
+      <p class="text-xs text-charcoal-800/80 leading-relaxed" id="svc-modal-desc">Descrição do serviço...</p>
+
+      <div class="p-4 rounded-xl bg-sand-100 border border-sand-200 space-y-2">
+        <h4 class="font-serif font-bold text-xs text-wine-950 uppercase tracking-wider">Entregáveis Incluídos:</h4>
+        <ul class="text-xs text-charcoal-800/80 space-y-1.5" id="svc-modal-list">
+          <!-- JS inserted -->
+        </ul>
+      </div>
+
+      <div class="pt-2 flex justify-end gap-3">
+        <button onclick="closeServiceModal()" class="px-4 py-2 text-xs font-semibold text-charcoal-800 bg-sand-100 rounded-lg hover:bg-sand-200">Fechar</button>
+        <button onclick="openBudgetModal(); closeServiceModal();" class="px-5 py-2 text-xs font-semibold text-white bg-wine-800 hover:bg-wine-900 rounded-lg shadow">Solicitar Proposta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Set Current Year in Footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Scroll Progress Bar Logic
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('scroll-progress').style.width = scrolled + '%';
+    });
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close Mobile Menu on link click
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Gallery Filtering
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      filterBtns.forEach(btn => {
+        btn.classList.remove('bg-wine-800', 'text-white', 'border-wine-800');
+        btn.classList.add('bg-sand-100', 'text-charcoal-800', 'border-sand-200');
+      });
+
+      event.target.classList.remove('bg-sand-100', 'text-charcoal-800', 'border-sand-200');
+      event.target.classList.add('bg-wine-800', 'text-white', 'border-wine-800');
+
+      items.forEach(item => {
+        if (category === 'todos' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Lightbox Modal Functions
+    function openLightbox(imgSrc, title, desc) {
+      document.getElementById('lightbox-img').src = imgSrc;
+      document.getElementById('lightbox-title').textContent = title;
+      document.getElementById('lightbox-desc').textContent = desc;
+      document.getElementById('lightbox-modal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+    }
+
+    // Budget Modal Functions
+    function openBudgetModal() {
+      document.getElementById('budget-modal').classList.remove('hidden');
+    }
+
+    function closeBudgetModal() {
+      document.getElementById('budget-modal').classList.add('hidden');
+    }
+
+    // Service Detail Modal
+    const serviceData = {
+      corporativas: {
+        title: "Obras Corporativas & Commercial Fit-out",
+        icon: "fa-solid fa-building",
+        desc: "Execução completa de espaços corporativos, sedes empresariais e estabelecimentos comerciais. Foco total no cumprimento rigoroso de prazos para evitar vacância e minimizar impactos na operação da empresa.",
+        items: [
+          "Gestão Turnkey de obras comerciais",
+          "Execução de divisórias acústicas e forro mineral/gesso",
+          "Adequação de instalações elétricas de alta densidade e dados",
+          "Pisos elevados e revestimentos corporativos",
+          "Adequação às normas do condomínio comercial e bombeiros"
+        ]
+      },
+      residenciais: {
+        title: "Construções Residenciais de Alto Padrão",
+        icon: "fa-solid fa-house-chimney",
+        desc: "Execução de residências exclusivas com alto padrão de acabamento. Acompanhamento rigoroso de engenharia estrutural, sistemas hidráulicos e térmicos, garantindo durabilidade e conforto estético.",
+        items: [
+          "Fundação, estrutura de concreto armado ou metálica",
+          "Impermeabilização técnica de alto nível",
+          "Instalação de esquadrias e vidros especiais",
+          "Acabamentos em pedras nobres e porcelanatos",
+          "Acompanhamento e relatórios fotográficos semanais"
+        ]
+      },
+      arquitetura: {
+        title: "Arquitetura & Desenvolvimento de Projetos",
+        icon: "fa-solid fa-pen-ruler",
+        desc: "Desenvolvimento de projetos arquitetônicos contemporâneos, aliando a visão estética ao rigor técnico de viabilidade construtiva. Compatibilização completa de disciplinas.",
+        items: [
+          "Estudo preliminar e maquete eletrônica 3D",
+          "Projetos executivos detalhados para obra",
+          "Projeto luminotécnico e de interiores",
+          "Compatibilização estrutural e hidráulica/elétrica",
+          "Detalhamento de marcenaria e serralheria"
+        ]
+      },
+      planejamento: {
+        title: "Planejamento, Cronograma & Gestão de Obras",
+        icon: "fa-solid fa-clipboard-check",
+        desc: "Serviço de gerenciamento técnico contínuo para clientes que já possuem projetos e buscam garantia de orçamento, controle de suprimentos e fiscalização da mão de obra.",
+        items: [
+          "Elaboração de cronograma físico-financeiro em curva S",
+          "Cotação e gestão de compras com fornecedores parceiros",
+          "Fiscalização diária/semanal de qualidade técnica na obra",
+          "Gestão de segurança do trabalho e NR",
+          "Prestação de contas transparente com relatórios periódicos"
+        ]
+      }
+    };
+
+    function openServiceDetail(key) {
+      const svc = serviceData[key];
+      if (!svc) return;
+
+      document.getElementById('svc-modal-icon').innerHTML = `<i class="${svc.icon}"></i>`;
+      document.getElementById('svc-modal-title').textContent = svc.title;
+      document.getElementById('svc-modal-desc').textContent = svc.desc;
+
+      const listContainer = document.getElementById('svc-modal-list');
+      listContainer.innerHTML = svc.items.map(item => `<li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500"></i> ${item}</li>`).join('');
+
+      document.getElementById('service-modal').classList.remove('hidden');
+    }
+
+    function closeServiceModal() {
+      document.getElementById('service-modal').classList.add('hidden');
+    }
+
+    // FORM HANDLERS FOR WHATSAPP INTEGRATION
+    const WHATSAPP_NUMBER = "5500000000000"; // Configurable official number
+
+    function handleHeroQuickCalc(e) {
+      e.preventDefault();
+      const type = document.getElementById('quick-type').value;
+      const area = document.getElementById('quick-area').value;
+
+      const text = `Ol%C3%A1%21%20Vim%20pelo%20site%20da%20FD%20Construtora%20e%20fiz%20uma%20simula%C3%A7%C3%A3o%20r%C3%A1pida%3A%0A%0A%E2%80%A2%20*Tipo%20de%20Obra%3A*%20${encodeURIComponent(type)}%0A%E2%80%A2%20*A%CC%81rea%20Aproximada%3A*%20${encodeURIComponent(area)}%20m%C2%B2%0A%0AGostaria%20de%20receber%20uma%20estimativa%20ou%20agendar%20uma%20conversa%20te%CC%81cnica.`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const phone = document.getElementById('form-phone').value;
+      const service = document.getElementById('form-service').value;
+      const location = document.getElementById('form-location').value || "Não informada";
+      const message = document.getElementById('form-message').value || "Sem detalhes adicionais";
+
+      const text = `Ol%C3%A1%2C%20equipe%20FD%20Construtora%21%0A%0A*Nova%20solicita%C3%A7%C3%A3o%20de%20contato%20pelo%20site%3A*%0A%0A%E2%80%A2%20*Nome%3A*%20${encodeURIComponent(name)}%0A%E2%80%A2%20*Telefone%3A*%20${encodeURIComponent(phone)}%0A%E2%80%A2%20*Servi%C3%A7o%3A*%20${encodeURIComponent(service)}%0A%E2%80%A2%20*Local%3A*%20${encodeURIComponent(location)}%0A%E2%80%A2%20*Detalhes%3A*%20${encodeURIComponent(message)}`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+    }
+
+    function handleModalBudgetSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('modal-name').value;
+      const type = document.getElementById('modal-type').value;
+      const msg = document.getElementById('modal-msg').value || "Gostaria de agendar um atendimento.";
+
+      const text = `Ol%C3%A1%21%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20FD%20Construtora%3A%0A%0A%E2%80%A2%20*Nome%3A*%20${encodeURIComponent(name)}%0A%E2%80%A2%20*Modalidade%3A*%20${encodeURIComponent(type)}%0A%E2%80%A2%20*Mensagem%3A*%20${encodeURIComponent(msg)}`;
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+      closeBudgetModal();
+    }
+  </script>
+</body>
+</html>
